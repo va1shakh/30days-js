@@ -1,7 +1,11 @@
 function arrayFilter(arr, fn){
     let filteredArr = [];
+    let newIndex = 0;
     for(i=0; i<arr.length; i++){
-        filteredArr[i] = fn(arr[i], i); //instead of array.push
+        if(fn(arr[i])){
+            filteredArr[newIndex] = arr[i];
+            newIndex ++;
+        }
     }
     return filteredArr;
 }
